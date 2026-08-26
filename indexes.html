@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>faanoon.co | Fine Jewelry</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Playfair Display', 'Didot', Georgia, serif;
+            color: #2b2b2b;
+            background-color: #fdfbf7; /* Off-white background */
+            line-height: 1.6;
+        }
+        
+        /* Top Announcement / Navigation Header (Deep Maroon) */
+        header {
+            background-color: #4a0e17; /* Deep Maroon */
+            color: #fdfbf7;
+            padding: 1.2rem 5%;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 2rem;
+            letter-spacing: 3px;
+            font-weight: 300;
+            font-style: italic;
+            color: #fdfbf7;
+            text-decoration: none;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #fdfbf7;
+            transition: opacity 0.3s;
+        }
+        .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        /* Hero Banner */
+        .hero {
+            height: 75vh;
+            background: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.35);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+            padding: 0 1rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2.2rem;
+            background: #4a0e17; /* Maroon Button */
+            color: #fdfbf7;
+            text-decoration: none;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            border: 1px solid #4a0e17;
+        }
+        .btn:hover {
+            background: #fdfbf7;
+            color: #4a0e17;
+        }
+
+        /* Featured Products Grid (12 Items) */
+        .products {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            letter-spacing: 1.5px;
+            color: #4a0e17;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem 1.8rem;
+        }
+        .product-card {
+            background: #ffffff;
+            padding: 1rem;
+            border: 1px solid #eee5dc;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .product-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        .product-info {
+            margin-top: auto;
+        }
+        .product-title {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+            color: #2b2b2b;
+            font-weight: 400;
+        }
+        .price {
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #4a0e17; /* Deep Maroon Pricing */
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #4a0e17;
+            color: #fdfbf7;
+            text-align: center;
+            padding: 3rem 1rem;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-size: 0.85rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">faanoon.co</a>
+            <ul class="nav-links">
+                <li><a href="#">Rings</a></li>
+                <li><a href="#">Necklaces</a></li>
+                <li><a href="#">Earrings</a></li>
+                <li><a href="#">Best Sellers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Timeless Elegance</h1>
+            <p>Handcrafted statement jewelry curated for every occasion.</p>
+            <a href="#collection" class="btn">Shop Collection</a>
+        </div>
+    </section>
+
+    <section class="products" id="collection">
+        <h2 class="section-title">Our Collection</h2>
+        <div class="product-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Gold Solitaire Ring</h3>
+                    <p class="price">$150.00</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Pearl Pendant Necklace</h3>
+                    <p class="price">$180.00</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Diamond Drop Earrings</h3>
+                    <p class="price">$210.00</p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Chunky Gold Hoops</h3>
+                    <p class="price">$120.00</p>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611591475111-9426f04944d6?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Statement Gemstone Ring</h3>
+                    <p class="price">$195.00</p>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Layered Chain Necklace</h3>
+                    <p class="price">$230.00</p>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Vintage Gold Band</h3>
+                    <p class="price">$140.00</p>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Crystal Choker</h3>
+                    <p class="price">$175.00</p>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Minimalist Studs</h3>
+                    <p class="price">$95.00</p>
+                </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Textured Cuff Bracelet</h3>
+                    <p class="price">$160.00</p>
+                </div>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611591475111-9426f04944d6?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Eternity Band Ring</h3>
+                    <p class="price">$210.00</p>
+                </div>
+            </div>
+
+            <!-- Product 12 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=500&q=80" alt="Jewelry Item">
+                <div class="product-info">
+                    <h3 class="product-title">Golden Charm Bracelet</h3>
+                    <p class="price">$185.00</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 faanoon.co. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
