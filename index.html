@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fanoon.co | Fine Jewelry</title>
- <meta name="google-site-verification" content="rlk5xhQNQ605BMi1zZvzUcvhEqLPL0UqdFv1Xm5zEAM" />
+  <meta name="google-site-verification" content="rlk5xhQNQ605BMi1zZvzUcvhEqLPL0UqdFv1Xm5zEAM" />
   <style>
     /* Global Styles */
     * {
@@ -19,24 +19,31 @@
       color: #2c2c2c;
     }
 
-    /* Top Left Circular Logo (product3.jpg) */
+    /* Top Left Circular Logo - Centered & Cropped on Emblem */
     .top-left-circle {
       position: absolute;
-      top: 12px;
+      top: 10px;
       left: 15px;
       z-index: 1000;
       display: flex;
       align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      background-color: #2b1414;
       text-decoration: none;
     }
 
     .top-left-circle img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border: 2px solid #ffffff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      object-position: 82% center; /* Focuses directly on the right-hand circular logo */
+      transform: scale(1.15); /* Zooms into the logo detail */
     }
 
     /* Navigation Header */
@@ -64,14 +71,14 @@
       letter-spacing: 1px;
     }
 
-    /* Hero Section - Fixed scaling to fit image fully */
+    /* Hero Section */
     .hero {
       background-color: #2b1414;
       background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url('product2.jpg');
       background-size: cover;
-      background-position: center top; /* Keeps the necklace framed properly */
+      background-position: center top;
       background-repeat: no-repeat;
-      height: 60vh; /* Scaled height so it doesn't zoom too far in */
+      height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -159,12 +166,35 @@
       margin-bottom: 15px;
     }
 
+    .card-links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
     .card-links a {
       display: inline-block;
-      margin: 0 5px;
-      color: #2b1414;
+      padding: 6px 14px;
       font-size: 0.8rem;
-      text-decoration: underline;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .card-links a:hover {
+      opacity: 0.85;
+    }
+
+    .btn-wa {
+      background-color: #25D366;
+      color: #ffffff !important;
+    }
+
+    .btn-insta {
+      background-color: #E1306C;
+      color: #ffffff !important;
     }
 
     footer {
@@ -178,9 +208,9 @@
 </head>
 <body>
 
-  <!-- Top Left Corner Circular Image -->
-  <a href="#" class="top-left-circle">
-    <img src="product3.jpg" alt="Icon Header">
+  <!-- Top Left Corner Logo (Uses product3.jpeg from repo) -->
+  <a href="#" class="top-left-circle" title="Fanoon.co">
+    <img src="product3.jpeg" alt="Fanoon Logo Icon">
   </a>
 
   <!-- Header Navigation -->
@@ -201,7 +231,7 @@
     <a href="#collection" class="btn-shop">SHOP COLLECTION</a>
   </section>
 
-  <!-- Collection Section (Product 2 removed) -->
+  <!-- Collection Section -->
   <section class="collection" id="collection">
     <h2>Our Collection</h2>
     <div class="grid">
@@ -211,8 +241,8 @@
         <h3>Moon Pendant</h3>
         <p class="price">Rs. 1,300</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Moon%20Pendant" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -221,8 +251,8 @@
         <h3>Diamond Drop Earrings</h3>
         <p class="price">Rs. 2,100</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Diamond%20Drop%20Earrings" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -231,8 +261,8 @@
         <h3>Chunky Gold Hoops</h3>
         <p class="price">Rs. 1,200</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Chunky%20Gold%20Hoops" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -241,8 +271,8 @@
         <h3>Statement Gemstone Ring</h3>
         <p class="price">Rs. 1,950</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Statement%20Gemstone%20Ring" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -251,8 +281,8 @@
         <h3>Layered Chain Necklace</h3>
         <p class="price">Rs. 2,300</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Layered%20Chain%20Necklace" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -261,8 +291,8 @@
         <h3>Vintage Gold Band</h3>
         <p class="price">Rs. 1,400</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Vintage%20Gold%20Band" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -271,8 +301,8 @@
         <h3>Crystal Choker</h3>
         <p class="price">Rs. 1,750</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Crystal%20Choker" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -281,8 +311,8 @@
         <h3>Minimalist Studs</h3>
         <p class="price">Rs. 950</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Minimalist%20Studs" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -291,8 +321,8 @@
         <h3>Textured Cuff Bracelet</h3>
         <p class="price">Rs. 1,600</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Textured%20Cuff%20Bracelet" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -301,8 +331,8 @@
         <h3>Eternity Band Ring</h3>
         <p class="price">Rs. 2,100</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Eternity%20Band%20Ring" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
@@ -311,8 +341,8 @@
         <h3>Golden Charm Bracelet</h3>
         <p class="price">Rs. 1,850</p>
         <div class="card-links">
-          <a href="#">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Golden%20Charm%20Bracelet" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
 
