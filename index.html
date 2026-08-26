@@ -144,11 +144,27 @@
       text-align: center;
     }
 
-    .card img {
+    /* Swipeable Product Image Slider */
+    .product-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .product-slider::-webkit-scrollbar {
+      display: none; /* Hide scrollbars for a clean look */
+    }
+
+    .product-slider img {
       width: 100%;
       height: 250px;
       object-fit: cover;
-      margin-bottom: 15px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
     }
 
     .card h3 {
@@ -227,8 +243,11 @@
     <h2>Our Collection</h2>
     <div class="grid">
 
+      <!-- Product 1 -->
       <div class="card">
-        <img src="moon55.jpeg" alt="Moon Pendant">
+        <div class="product-slider">
+          <img src="moon55.jpeg" alt="Moon Pendant">
+        </div>
         <h3>Moon Pendant</h3>
         <p class="price">Rs. 1,300</p>
         <div class="card-links">
@@ -237,8 +256,12 @@
         </div>
       </div>
 
+      <!-- Product 2 (2 Images Added) -->
       <div class="card">
-        <img src="product4.jpg" alt="Diamond Drop Earrings">
+        <div class="product-slider">
+          <img src="PAVE.jpg" alt="Diamond Drop Earrings - Image 1">
+          <img src="PAVEE.jpg" alt="Diamond Drop Earrings - Image 2">
+        </div>
         <h3>Diamond Drop Earrings</h3>
         <p class="price">Rs. 2,100</p>
         <div class="card-links">
@@ -247,8 +270,11 @@
         </div>
       </div>
 
+      <!-- Product 3 -->
       <div class="card">
-        <img src="product5.jpg" alt="Chunky Gold Hoops">
+        <div class="product-slider">
+          <img src="product5.jpg" alt="Chunky Gold Hoops">
+        </div>
         <h3>Chunky Gold Hoops</h3>
         <p class="price">Rs. 1,200</p>
         <div class="card-links">
@@ -257,8 +283,11 @@
         </div>
       </div>
 
+      <!-- Product 4 -->
       <div class="card">
-        <img src="product6.jpg" alt="Statement Gemstone Ring">
+        <div class="product-slider">
+          <img src="product6.jpg" alt="Statement Gemstone Ring">
+        </div>
         <h3>Statement Gemstone Ring</h3>
         <p class="price">Rs. 1,950</p>
         <div class="card-links">
@@ -267,8 +296,11 @@
         </div>
       </div>
 
+      <!-- Product 5 -->
       <div class="card">
-        <img src="product7.jpg" alt="Layered Chain Necklace">
+        <div class="product-slider">
+          <img src="product7.jpg" alt="Layered Chain Necklace">
+        </div>
         <h3>Layered Chain Necklace</h3>
         <p class="price">Rs. 2,300</p>
         <div class="card-links">
@@ -277,8 +309,11 @@
         </div>
       </div>
 
+      <!-- Product 6 -->
       <div class="card">
-        <img src="product8.jpg" alt="Vintage Gold Band">
+        <div class="product-slider">
+          <img src="product8.jpg" alt="Vintage Gold Band">
+        </div>
         <h3>Vintage Gold Band</h3>
         <p class="price">Rs. 1,400</p>
         <div class="card-links">
@@ -287,8 +322,11 @@
         </div>
       </div>
 
+      <!-- Product 7 -->
       <div class="card">
-        <img src="product9.jpg" alt="Crystal Choker">
+        <div class="product-slider">
+          <img src="product9.jpg" alt="Crystal Choker">
+        </div>
         <h3>Crystal Choker</h3>
         <p class="price">Rs. 1,750</p>
         <div class="card-links">
@@ -297,8 +335,11 @@
         </div>
       </div>
 
+      <!-- Product 8 -->
       <div class="card">
-        <img src="product10.jpg" alt="Minimalist Studs">
+        <div class="product-slider">
+          <img src="product10.jpg" alt="Minimalist Studs">
+        </div>
         <h3>Minimalist Studs</h3>
         <p class="price">Rs. 950</p>
         <div class="card-links">
@@ -307,8 +348,11 @@
         </div>
       </div>
 
+      <!-- Product 9 -->
       <div class="card">
-        <img src="product11.jpg" alt="Textured Cuff Bracelet">
+        <div class="product-slider">
+          <img src="product11.jpg" alt="Textured Cuff Bracelet">
+        </div>
         <h3>Textured Cuff Bracelet</h3>
         <p class="price">Rs. 1,600</p>
         <div class="card-links">
@@ -317,8 +361,11 @@
         </div>
       </div>
 
+      <!-- Product 10 -->
       <div class="card">
-        <img src="product12.jpg" alt="Eternity Band Ring">
+        <div class="product-slider">
+          <img src="product12.jpg" alt="Eternity Band Ring">
+        </div>
         <h3>Eternity Band Ring</h3>
         <p class="price">Rs. 2,100</p>
         <div class="card-links">
@@ -327,12 +374,28 @@
         </div>
       </div>
 
+      <!-- Product 11 -->
       <div class="card">
-        <img src="product13.jpg" alt="Golden Charm Bracelet">
+        <div class="product-slider">
+          <img src="product13.jpg" alt="Golden Charm Bracelet">
+        </div>
         <h3>Golden Charm Bracelet</h3>
         <p class="price">Rs. 1,850</p>
         <div class="card-links">
           <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Golden%20Charm%20Bracelet" target="_blank" class="btn-wa">WhatsApp</a>
+          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Product 12 -->
+      <div class="card">
+        <div class="product-slider">
+          <img src="product4.jpg" alt="Classic Hoop Earrings">
+        </div>
+        <h3>Classic Hoop Earrings</h3>
+        <p class="price">Rs. 1,500</p>
+        <div class="card-links">
+          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Classic%20Hoop%20Earrings" target="_blank" class="btn-wa">WhatsApp</a>
           <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
         </div>
       </div>
