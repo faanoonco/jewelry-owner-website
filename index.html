@@ -1,398 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fanoon.co | Fine Jewelry</title>
-  <meta name="google-site-verification" content="rlk5xhQNQ605BMi1zZvzUcvhEqLPL0UqdFv1Xm5zEAM" />
-  <style>
-    /* Global Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Playfair Display', Georgia, serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Fanoon.co</title>
+    <style>
+        * {box-sizing: border-box; margin: 0; padding: 0; font-family: 'Playfair Display', Georgia, serif;}
+        body {background-color: #fdfbf7; color: #2c2c2c;}
 
-    body {
-      background-color: #fdfbf7;
-      color: #2c2c2c;
-    }
+        header {background-color: #2b1414; display: flex; justify-content: center; align-items: center; padding: 15px 20px;}
+        .header-brand-container {display: flex; align-items: center; justify-content: center; gap: 12px; text-decoration: none;}
+        .top-left-circle {display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: 2px solid #ffffff; box-shadow: 0 2px 6px rgba(0,0,0,0.3); background-color: #2b1414; flex-shrink: 0;}
+        .top-left-circle img {width: 100%; height: 100%; object-fit: cover; object-position: 82% center; transform: scale(1.15);}
+        .brand-name {color: #fdfbf7; font-size: 1.6rem; letter-spacing: 2px; text-decoration: none; font-weight: 400;}
 
-    /* Centered Navigation Header */
-    header {
-      background-color: #2b1414;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px 20px;
-      position: relative;
-    }
+        .container {max-width: 800px; margin: 50px auto; padding: 0 20px;}
+        .back-link {display: inline-block; margin-bottom: 20px; color: #2b1414; text-decoration: none; font-family: Arial, sans-serif; font-size: 0.9rem;}
+        .back-link:hover {text-decoration: underline;}
 
-    .header-brand-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      text-decoration: none;
-    }
+        .product-detail-card {background: #ffffff; border: 1px solid #f0e6df; padding: 30px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);}
 
-    /* Circular Logo - Aligned & Cropped on Emblem */
-    .top-left-circle {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid #ffffff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      background-color: #2b1414;
-      flex-shrink: 0;
-    }
+        /* Swipeable Slider */
+        .product-slider {display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; border-radius: 4px; margin-bottom: 20px; -webkit-overflow-scrolling: touch;}
+        .product-slider::-webkit-scrollbar {display: none;}
+        .product-slider img {width: 100%; height: 400px; object-fit: cover; flex-shrink: 0; scroll-snap-align: start;}
 
-    .top-left-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 82% center;
-      transform: scale(1.15);
-    }
+        .product-title {font-size: 2rem; font-weight: 400; margin-bottom: 10px;}
+        .product-price {color: #666; font-style: italic; font-size: 1.4rem; margin-bottom: 20px;}
+        
+        .product-description-section {margin-bottom: 25px; border-top: 1px solid #f0e6df; border-bottom: 1px solid #f0e6df; padding: 20px 0;}
+        .product-description-section h4 {font-size: 1.1rem; margin-bottom: 8px; font-weight: 600; font-family: Arial, sans-serif; letter-spacing: 0.5px;}
+        .product-description-section p {color: #555; line-height: 1.6; font-size: 1rem;}
 
-    .brand-name {
-      color: #fdfbf7; /* Off-white / Cream */
-      font-size: 1.6rem;
-      letter-spacing: 2px;
-      text-decoration: none;
-      font-weight: 400;
-    }
+        .card-links {display: flex; gap: 15px;}
+        .card-links a {display: inline-block; padding: 12px 25px; font-size: 0.9rem; text-decoration: none; border-radius: 4px; font-family: Arial, sans-serif; font-weight: 600; transition: opacity 0.2s;}
+        .card-links a:hover {opacity: 0.85;}
+        .btn-wa {background-color: #25D366; color: #ffffff !important;}
+        .btn-insta {background-color: #E1306C; color: #ffffff !important;}
 
-    /* Hero Section */
-    .hero {
-      background-color: #2b1414;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url('product2.jpg');
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: #ffffff;
-      padding: 20px;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 400;
-      margin-bottom: 10px;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      font-style: italic;
-      margin-bottom: 25px;
-      opacity: 0.95;
-      text-shadow: 0 1px 5px rgba(0,0,0,0.6);
-    }
-
-    .btn-shop {
-      display: inline-block;
-      padding: 12px 30px;
-      border: 1px solid #ffffff;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: 1px;
-      font-size: 0.85rem;
-      background: rgba(0, 0, 0, 0.2);
-      transition: background 0.3s;
-    }
-
-    .btn-shop:hover {
-      background-color: #ffffff;
-      color: #2b1414;
-    }
-
-    /* Collection Grid */
-    .collection {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 20px;
-      text-align: center;
-    }
-
-    .collection h2 {
-      font-size: 2.2rem;
-      margin-bottom: 40px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: #ffffff;
-      border: 1px solid #f0e6df;
-      padding: 15px;
-      text-align: center;
-    }
-
-    /* Swipeable Product Image Slider */
-    .product-slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      border-radius: 4px;
-      margin-bottom: 15px;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .product-slider::-webkit-scrollbar {
-      display: none; /* Hide scrollbars for a clean look */
-    }
-
-    .product-slider img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      flex-shrink: 0;
-      scroll-snap-align: start;
-    }
-
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 5px;
-      font-weight: 400;
-    }
-
-    .card .price {
-      color: #666;
-      font-style: italic;
-      margin-bottom: 15px;
-    }
-
-    .card-links {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .card-links a {
-      display: inline-block;
-      padding: 6px 14px;
-      font-size: 0.8rem;
-      text-decoration: none;
-      border-radius: 4px;
-      font-family: Arial, sans-serif;
-      font-weight: 600;
-      transition: opacity 0.2s;
-    }
-
-    .card-links a:hover {
-      opacity: 0.85;
-    }
-
-    .btn-wa {
-      background-color: #25D366;
-      color: #ffffff !important;
-    }
-
-    .btn-insta {
-      background-color: #E1306C;
-      color: #ffffff !important;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #2b1414;
-      color: #888;
-      font-size: 0.8rem;
-    }
-  </style>
+        footer {text-align: center; padding: 30px; background: #2b1414; color: #888; font-size: 0.8rem; margin-top: 60px;}
+    </style>
 </head>
 <body>
 
-  <!-- Header Navigation with Centered Brand and Logo -->
-  <header>
-    <a href="#" class="header-brand-container">
-      <div class="top-left-circle" title="Fanoon.co">
-        <img src="product3.jpeg" alt="Fanoon Logo Icon">
-      </div>
-      <span class="brand-name">Fanoon.co</span>
-    </a>
-  </header>
+    <header>
+        <a href="index.html" class="header-brand-container">
+            <div class="top-left-circle" title="Fanoon.co">
+                <img src="product3.jpeg" alt="Fanoon Logo Icon">
+            </div>
+            <span class="brand-name">Fanoon.co</span>
+        </a>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Chic. Bold. Iconic. Minimal.</h1>
-    <p>A style for every occasion</p>
-    <a href="#collection" class="btn-shop">SHOP COLLECTION</a>
-  </section>
-
-  <!-- Collection Section -->
-  <section class="collection" id="collection">
-    <h2>Our Collection</h2>
-    <div class="grid">
-
-      <!-- Product 1 -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="moon55.jpeg" alt="Moon Pendant">
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Back to Collection</a>
+        
+        <div class="product-detail-card" id="product-content">
+            <!-- Dynamically populated via JavaScript -->
         </div>
-        <h3>Moon Pendant</h3>
-        <p class="price">Rs. 1,300</p>
-        <div class="card-links">
-          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Moon%20Pendant" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 2 (Twisted Pave Hoop Earrings) -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="PAVE.jpg" alt="Twisted Pave Hoop Earrings - Image 1">
-          <img src="PAVEE.jpg" alt="Twisted Pave Hoop Earrings - Image 2">
-        </div>
-        <h3>Twisted Pave Hoop Earrings</h3>
-        <p class="price">Rs. 1,500</p>
-        <div class="card-links">
-          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Twisted%20Pave%20Hoop%20Earrings" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 3 (The Bridgerton necklace) -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="pinkie.jpeg" alt="The Bridgerton necklace">
-        </div>
-        <h3>The Bridgerton necklace</h3>
-        <p class="price">Rs. 1,450</p>
-        <div class="card-links">
-          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20The%20Bridgerton%20necklace" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="url?id=3" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 4 (The Bridgerton necklace (2)) -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="pinkie2.jpeg" alt="The Bridgerton necklace (2)">
-        </div>
-        <h3>The Bridgerton necklace (2)</h3>
-        <p class="price">Rs. 1,450</p>
-        <div class="card-links">
-          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20The%20Bridgerton%20necklace%20(2)" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 5 (The Bridgerton necklace (3)) -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="pinkie3.jpeg" alt="The Bridgerton necklace (3)">
-        </div>
-        <h3>The Bridgerton necklace (3)</h3>
-        <p class="price">Rs. 1,450</p>
-        <div class="card-links">
-          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20The%20Bridgerton%20necklace%20(3)" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="url?id=3" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 6 -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="product9.jpg" alt="Crystal Choker">
-        </div>
-        <h3>Crystal Choker</h3>
-        <p class="price">Rs. 1,750</p>
-        <div class="card-links">
-          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Crystal%20Choker" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 7 -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="product10.jpg" alt="Minimalist Studs">
-        </div>
-        <h3>Minimalist Studs</h3>
-        <p class="price">Rs. 950</p>
-        <div class="card-links">
-          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Minimalist%20Studs" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 8 -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="product11.jpg" alt="Textured Cuff Bracelet">
-        </div>
-        <h3>Textured Cuff Bracelet</h3>
-        <p class="price">Rs. 1,600</p>
-        <div class="card-links">
-          <a href="url?id=11" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 9 -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="product12.jpg" alt="Eternity Band Ring">
-        </div>
-        <h3>Eternity Band Ring</h3>
-        <p class="price">Rs. 2,100</p>
-        <div class="card-links">
-          <a href="url?id=12" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="url?id=3" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 10 -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="product13.jpg" alt="Golden Charm Bracelet">
-        </div>
-        <h3>Golden Charm Bracelet</h3>
-        <p class="price">Rs. 1,850</p>
-        <div class="card-links">
-          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Golden%20Charm%20Bracelet" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
-      <!-- Product 11 -->
-      <div class="card">
-        <div class="product-slider">
-          <img src="product4.jpg" alt="Classic Hoop Earrings">
-        </div>
-        <h3>Classic Hoop Earrings</h3>
-        <p class="price">Rs. 1,500</p>
-        <div class="card-links">
-          <a href="https://wa.me/923345669379?text=Hi!%20I%20want%20to%20order%20Classic%20Hoop%20Earrings" target="_blank" class="btn-wa">WhatsApp</a>
-          <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
-        </div>
-      </div>
-
     </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2026 Fanoon.co. All rights reserved.</p>
-  </footer>
+    <footer>
+        <p>&copy; 2026 Fanoon.co. All rights reserved.</p>
+    </footer>
 
+    <script>
+        // Database of products
+        const products = {
+            "moon-pendant": {
+                name: "Moon Pendant",
+                price: "Rs. 1,300",
+                images: ["moon55.jpeg"],
+                descriptionHeading: "Description",
+                descriptionText: "tarnish free and minimal pendent for everyday use"
+            },
+            "twisted-pave-hoops": {
+                name: "Twisted Pave Hoop Earrings",
+                price: "Rs. 1,500",
+                images: ["PAVE.jpg", "PAVEE.jpg"]
+            },
+            "bridgerton-necklace": {
+                name: "The Bridgerton necklace",
+                price: "Rs. 1,450",
+                images: ["pinkie.jpeg"]
+            },
+            "bridgerton-necklace-2": {
+                name: "The Bridgerton necklace (2)",
+                price: "Rs. 1,450",
+                images: ["pinkie2.jpeg"]
+            },
+            "bridgerton-necklace-3": {
+                name: "The Bridgerton necklace (3)",
+                price: "Rs. 1,450",
+                images: ["pinkie3.jpeg"]
+            },
+            "crystal-choker": {
+                name: "Crystal Choker",
+                price: "Rs. 1,750",
+                images: ["product9.jpg"]
+            },
+            "minimalist-studs": {
+                name: "Minimalist Studs",
+                price: "Rs. 950",
+                images: ["product10.jpg"]
+            },
+            "textured-cuff-bracelet": {
+                name: "Textured Cuff Bracelet",
+                price: "Rs. 1,600",
+                images: ["product11.jpg"]
+            },
+            "eternity-band-ring": {
+                name: "Eternity Band Ring",
+                price: "Rs. 2,100",
+                images: ["product12.jpg"]
+            },
+            "golden-charm-bracelet": {
+                name: "Golden Charm Bracelet",
+                price: "Rs. 1,850",
+                images: ["product13.jpg"]
+            },
+            "classic-hoop-earrings": {
+                name: "Classic Hoop Earrings",
+                price: "Rs. 1,500",
+                images: ["product4.jpg"]
+            }
+        };
+
+        // Get product ID from URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const product = products[productId];
+
+        const container = document.getElementById('product-content');
+
+        if (product) {
+            // Build image slider HTML
+            let imagesHtml = '<div class="product-slider">';
+            product.images.forEach(img => {
+                imagesHtml += `<img src="${img}" alt="${product.name}">`;
+            });
+            imagesHtml += '</div>';
+
+            // Build optional description section HTML
+            let descHtml = '';
+            if (product.descriptionHeading && product.descriptionText) {
+                descHtml = `
+                    <div class="product-description-section">
+                        <h4>${product.descriptionHeading}</h4>
+                        <p>${product.descriptionText}</p>
+                    </div>
+                `;
+            }
+
+            // WhatsApp link encoding
+            const waText = encodeURIComponent(`Hi! I want to order ${product.name}`);
+            const waLink = `https://wa.me/923345669379?text=${waText}`;
+
+            container.innerHTML = `
+                ${imagesHtml}
+                <h1 class="product-title">${product.name}</h1>
+                <div class="product-price">${product.price}</div>
+                ${descHtml}
+                <div class="card-links">
+                    <a href="${waLink}" target="_blank" class="btn-wa">WhatsApp</a>
+                    <a href="https://instagram.com/faanoon.co" target="_blank" class="btn-insta">Instagram</a>
+                </div>
+            `;
+        } else {
+            container.innerHTML = '<h2>Product not found</h2><p style="margin-top:10px;">Please go back to the collection page.</p>';
+        }
+    </script>
 </body>
 </html>
